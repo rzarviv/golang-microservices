@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println("hi there")
+	// loadEnvVariables()
 	initGateway()
 }
 
@@ -21,7 +20,9 @@ func initGateway() {
 		})
 	})
 	port := 9000
-	if err := router.Run(fmt.Sprintf(":%d", port)); err != nil { 
+	if err := router.Run(fmt.Sprintf(":%d", port)); err != nil {
 		log.Fatalf("cannot start api gateway on port %d, error is :%s", port, err.Error())
-	} 
+	}
 }
+
+
